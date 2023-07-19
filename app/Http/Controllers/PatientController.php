@@ -6,4 +6,8 @@ use Illuminate\Http\Request;
 
 class PatientController extends Controller
 {
+    public function create()
+    {
+        echo 'form add patient';
+    }
 }

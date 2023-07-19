@@ -12,6 +12,7 @@ class Patient extends Model
     protected $keyType = "string";
     protected $primaryKey = "id_patient";
     protected $fillable = [
+        'id_patient',
         'name',
         'phone',
         'address',

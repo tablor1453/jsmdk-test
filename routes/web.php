@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdministrationController;
 use App\Http\Controllers\Auth\AuthenticatedController;
+use App\Http\Controllers\PatientController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,16 +22,10 @@ Route::get('/', function () {
 
 Route::get('/login', [AuthenticatedController::class, 'create'])->name('login');
 
-Route::prefix('admin')->group(function () {
-    Route::get('/', function () {
-        echo 'Dashboard Admin';
-        // return view('welcome');
-    })->name('admin.dashboard');
+Route::prefix('kelurahan')->group(function () {
+    Route::get('/', [AdministrationController::class, 'create'])->name('admin.add');
 });
 
-Route::prefix('operator')->group(function () {
-    Route::get('/', function () {
-        echo 'Operator Page';
-        // return view('welcome');
-    })->name('operator.dashboard');
+Route::prefix('pasien')->group(function () {
+    Route::get('/', [PatientController::class, 'create'])->name('patient.add');
 });
