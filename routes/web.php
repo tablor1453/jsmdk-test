@@ -23,7 +23,9 @@ Route::get('/', function () {
 Route::get('/login', [AuthenticatedController::class, 'create'])->name('login');
 
 Route::prefix('kelurahan')->group(function () {
-    Route::get('/', [AdministrationController::class, 'create'])->name('admin.add');
+    Route::get('/', [AdministrationController::class, 'create'])->name('kelurahan.add');
+    Route::post('/', [AdministrationController::class, 'store'])->name('kelurahan.store');
+    Route::delete('/{kelurahan}/delete', [AdministrationController::class, 'delete'])->name('kelurahan.delete');
 });
 
 Route::prefix('pasien')->group(function () {

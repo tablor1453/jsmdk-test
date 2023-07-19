@@ -2,13 +2,26 @@
 
 namespace App\Services\Kelurahan;
 
+use App\Models\Administration;
+use App\Repositories\Kelurahan\KelurahanRepository;
+use Illuminate\Http\Request;
 
 class KelurahanServiceImplement implements KelurahanService
 {
-  public function add()
+  private $_kelurahanRepository;
+
+  public function __construct(KelurahanRepository $kelurahanRepository)
   {
-    dd('add');
-    return;
+    $this->_kelurahanRepository = $kelurahanRepository;
+  }
+
+  public function add(Request $request)
+  {
+    $data['kelurahan'] = $request->kelurahan;
+    $data['kecamatan'] = $request->kecamatan;
+    $data['kota'] = $request->kota;
+
+    return $this->_kelurahanRepository->add($data);;
   }
 
   public function edit()
@@ -16,13 +29,14 @@ class KelurahanServiceImplement implements KelurahanService
     return;
   }
 
-  public function delete()
+  public function delete(Administration $modelKelurahan)
   {
-    return;
+    // dd($this->_kelurahanRepository->delete($modelKelurahan));
+    return $this->_kelurahanRepository->delete($modelKelurahan);
   }
 
   public function getData()
   {
-    return;
+    return $this->_kelurahanRepository->getData();
   }
 }
