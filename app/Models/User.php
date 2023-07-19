@@ -41,4 +41,22 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public $incrementing = false;
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            if (empty($model->{$model->getKey()})) {
+                $model->{$model->getKeyName()} = $model->generateUid();
+            }
+        });
+    }
+
+    public static function generateUid($limit = 16)
+    {
+        return substr(base_convert(sha1(uniqid(mt_rand())), 16, 36), 0, $limit);
+    }
 }
