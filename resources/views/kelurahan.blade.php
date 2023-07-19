@@ -61,9 +61,9 @@
                 </span>
               </div> --}}
             </div>
-            <div class="d-grid gap-2 d-md-block mt-4">
+            <div class="d-grid gap-3 d-md-block mt-4">
               <button class="btn btn-primary" type="submit">Simpan</button>
-              <button class="btn btn-outline-dark" type="reset">Reset</button>
+              <button class="btn btn-outline-dark ms-1" type="reset">Reset</button>
             </div>
           </form>
         </div>
