@@ -8,7 +8,7 @@ class PatientController extends Controller
 {
     public function create()
     {
-        echo 'form add kelurahan';
+        echo 'form add Pasien';
     }
 
     public function store()

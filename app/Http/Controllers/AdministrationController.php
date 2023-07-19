@@ -2,13 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\Kelurahan\KelurahanService;
 use Illuminate\Http\Request;
 
 class AdministrationController extends Controller
 {
+    private $_kelurahanService;
+
+    public function __construct(KelurahanService $kelurahanService)
+    {
+        $this->_kelurahanService = $kelurahanService;
+    }
+
     public function create()
     {
-        echo 'form add kelurahan';
+        return view('kelurahan');
     }
 
     public function store()
