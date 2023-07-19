@@ -30,4 +30,6 @@ Route::prefix('kelurahan')->group(function () {
 
 Route::prefix('pasien')->group(function () {
     Route::get('/', [PatientController::class, 'create'])->name('patient.add');
+    Route::post('/', [PatientController::class, 'store'])->name('patient.store');
+    Route::delete('/{pasien}/delete', [PatientController::class, 'delete'])->name('patient.delete');
 });

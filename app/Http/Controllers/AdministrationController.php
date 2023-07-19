@@ -53,10 +53,10 @@ class AdministrationController extends Controller
         echo 'update';
     }
 
-    public function delete(Administration $kelurahan)
+    public function delete(Administration $modelKelurahan)
     {
         try {
-            if (!$this->_kelurahanService->delete($kelurahan)) throw new Exception("Terjadi kesalahan sistem, silahkan coba kembali", 500);
+            if (!$this->_kelurahanService->delete($modelKelurahan)) throw new Exception("Terjadi kesalahan sistem, silahkan coba kembali", 500);
 
             $message = [
                 'alertTitle' => 'Berhasil',

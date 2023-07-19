@@ -4,7 +4,6 @@ namespace App\Repositories\Kelurahan;
 
 use App\Models\Administration;
 use App\Repositories\Kelurahan\KelurahanRepository;
-use Illuminate\Http\Request;
 
 class KelurahanRepositoryImplement implements KelurahanRepository
 {
@@ -18,7 +17,7 @@ class KelurahanRepositoryImplement implements KelurahanRepository
     return;
   }
 
-  public function delete($modelKelurahan)
+  public function delete(Administration $modelKelurahan)
   {
     return $modelKelurahan->delete();
   }

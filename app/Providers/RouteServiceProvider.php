@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Administration;
+use App\Models\Patient;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
@@ -40,6 +41,7 @@ class RouteServiceProvider extends ServiceProvider
 
         // ======= Model binding ======= \\
         Route::model('kelurahan', Administration::class);
+        Route::model('pasien', Patient::class);
     }
 
     /**
