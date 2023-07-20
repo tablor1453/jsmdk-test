@@ -26,9 +26,9 @@ class AuthenticatedController extends Controller
         if ($this->_authLogin($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('dashboard');
+            return redirect()->intended('admin');
 
-            dd('login berhasil');
+            // dd('login berhasil');
         }
 
         return back()->withErrors([
