@@ -21,6 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get('/login', [AuthenticatedController::class, 'create'])->name('login');
+Route::post('/login', [AuthenticatedController::class, 'store'])->name('login');
 
 Route::prefix('kelurahan')->group(function () {
     Route::get('/', [AdministrationController::class, 'create'])->name('kelurahan.add');

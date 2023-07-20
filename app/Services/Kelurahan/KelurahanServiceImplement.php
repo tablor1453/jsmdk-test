@@ -31,7 +31,6 @@ class KelurahanServiceImplement implements KelurahanService
 
   public function delete(Administration $modelKelurahan)
   {
-    // dd($this->_kelurahanRepository->delete($modelKelurahan));
     return $this->_kelurahanRepository->delete($modelKelurahan);
   }
 

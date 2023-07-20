@@ -28,8 +28,6 @@ class PatientServiceImplement implements PatientService
     $data['rw'] = $request->rw;
     $data['id_kelurahan'] = $request->kelurahan;
 
-    // dd($request->all(), $data);
-
     return $this->_patientRepository->add($data);
   }
 
